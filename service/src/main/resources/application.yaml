@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/SISTC_DB
+    username: postgres
+    password: 0000
+
+  liquibase:
+    change-log: classpath:liquibase/master.xml

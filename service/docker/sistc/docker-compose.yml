@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  sistc-postgresql:
+    image: postgres:14.1-alpine
+    container_name: sistc-postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0000
+      POSTGRES_DB: SISTC_DB
