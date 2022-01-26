@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/passe")
+@RequestMapping("/api/passes")
 public class PasseResource {
 
     private final PasseService service;
@@ -36,13 +36,13 @@ public class PasseResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PasseDTO> obterPorId(@PathVariable("id") Long id){
+    public ResponseEntity<PasseDTO> obterPorId(@PathVariable("id") Long id) {
         PasseDTO dto = service.obterPorId(id);
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable("id") Long id){
+    public ResponseEntity<Void> deletar(@PathVariable("id") Long id) {
         service.deletar(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

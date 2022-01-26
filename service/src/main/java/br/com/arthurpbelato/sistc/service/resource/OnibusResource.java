@@ -36,7 +36,7 @@ public class OnibusResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<OnibusDTO> obterPorId(@PathVariable("id") Long id) {
-        OnibusDTO dto = service.obterPorID(id);
+        OnibusDTO dto = service.obterPorId(id);
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 

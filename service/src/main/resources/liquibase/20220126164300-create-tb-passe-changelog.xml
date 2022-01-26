@@ -16,7 +16,9 @@
             <column name="categoria_estudantil" type="BOOLEAN"/>
             <column name="id_pessoa" type="BIGINT"/>
         </createTable>
-        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="tb_passe" constraintName="FK_TB_PASSE_ON_ID_PESSOA" referencedColumnNames="id" referencedTableName="tb_pessoa"/>
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="tb_passe"
+                                 constraintName="FK_TB_PASSE_ON_ID_PESSOA" referencedColumnNames="id"
+                                 referencedTableName="tb_pessoa"/>
     </changeSet>
     <changeSet id="1643226593865-1" author="arthur.belato">
         <createSequence sequenceName="SEQ_PESSOA" startValue="1" incrementBy="1"/>
