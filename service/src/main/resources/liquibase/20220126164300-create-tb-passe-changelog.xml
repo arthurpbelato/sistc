@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="1643226579863-1" author="arthur.belato">
+        <createTable tableName="tb_passe">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_tb_passe"/>
+            </column>
+            <column name="codigo_rfid" type="BIGINT"/>
+            <column name="saldo" type="DOUBLE"/>
+            <column name="ativo" type="BOOLEAN"/>
+            <column name="categoria_estudantil" type="BOOLEAN"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="tb_passe" constraintName="FK_TB_PASSE_ON_ID_PESSOA" referencedColumnNames="id" referencedTableName="tb_pessoa"/>
+    </changeSet>
+    <changeSet id="1643226593865-1" author="arthur.belato">
+        <createSequence sequenceName="SEQ_PESSOA" startValue="1" incrementBy="1"/>
+    </changeSet>
+
+    <changeSet id="1643226696988-1" author="arthur.belato">
+        <addForeignKeyConstraint baseTableName="TB_PASSE" baseColumnNames="ID_PESSOA" referencedTableName="TB_PESSOA"
+                                 referencedColumnNames="ID" constraintName="FK_PESSOA_PASSE"/>
+    </changeSet>
+
+</databaseChangeLog>

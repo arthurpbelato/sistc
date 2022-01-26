@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/SISTC_DB
     username: sistc
-    password: 0000
+    password: "0000"
 
   liquibase:
     change-log: classpath:liquibase/master.xml

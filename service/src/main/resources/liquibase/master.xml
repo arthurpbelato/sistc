@@ -7,4 +7,5 @@
 
     <include file="liquibase/20220126134500-create-tb-pessoa-changelog.xml"/>
     <include file="liquibase/20220126134600-create-tb-onibus-changelog.xml"/>
+    <include file="liquibase/20220126164300-create-tb-passe-changelog.xml"/>
 </databaseChangeLog>

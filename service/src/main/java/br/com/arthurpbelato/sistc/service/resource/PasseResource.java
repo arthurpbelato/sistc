@@ -1,7 +1,7 @@
 package br.com.arthurpbelato.sistc.service.resource;
 
-import br.com.arthurpbelato.sistc.service.service.PessoaService;
-import br.com.arthurpbelato.sistc.service.service.dto.PessoaDTO;
+import br.com.arthurpbelato.sistc.service.service.PasseService;
+import br.com.arthurpbelato.sistc.service.service.dto.PasseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,26 +18,26 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/pessoa")
-public class PessoaResource {
+@RequestMapping("/api/passe")
+public class PasseResource {
 
-    private final PessoaService service;
+    private final PasseService service;
 
     @PostMapping
-    public ResponseEntity<PessoaDTO> salvar(@RequestBody PessoaDTO dto) {
-        PessoaDTO pessoaSalva = service.salvar(dto);
+    public ResponseEntity<PasseDTO> salvar(@RequestBody PasseDTO dto) {
+        PasseDTO pessoaSalva = service.salvar(dto);
         return new ResponseEntity<>(pessoaSalva, HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<PessoaDTO>> obterTodos() {
-        List<PessoaDTO> dtos = service.obterTodos();
+    public ResponseEntity<List<PasseDTO>> obterTodos() {
+        List<PasseDTO> dtos = service.obterTodos();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PessoaDTO> obterPorId(@PathVariable("id") Long id){
-        PessoaDTO dto = service.obterPorId(id);
+    public ResponseEntity<PasseDTO> obterPorId(@PathVariable("id") Long id){
+        PasseDTO dto = service.obterPorId(id);
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
@@ -48,8 +48,8 @@ public class PessoaResource {
     }
 
     @PutMapping
-    public ResponseEntity<PessoaDTO> atualizar(@RequestBody PessoaDTO dto) {
-        PessoaDTO atualizado = service.salvar(dto);
+    public ResponseEntity<PasseDTO> atualizar(@RequestBody PasseDTO dto) {
+        PasseDTO atualizado = service.salvar(dto);
         return new ResponseEntity<>(atualizado, HttpStatus.OK);
     }
 

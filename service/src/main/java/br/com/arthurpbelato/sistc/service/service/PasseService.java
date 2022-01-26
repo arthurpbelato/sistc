@@ -1,8 +1,8 @@
 package br.com.arthurpbelato.sistc.service.service;
 
-import br.com.arthurpbelato.sistc.service.repository.PessoaRepository;
-import br.com.arthurpbelato.sistc.service.service.dto.PessoaDTO;
-import br.com.arthurpbelato.sistc.service.service.mapper.PessoaMapper;
+import br.com.arthurpbelato.sistc.service.repository.PasseRepository;
+import br.com.arthurpbelato.sistc.service.service.dto.PasseDTO;
+import br.com.arthurpbelato.sistc.service.service.mapper.PasseMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,22 +10,22 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
-public class PessoaService {
+@RequiredArgsConstructor
+public class PasseService {
 
-    private final PessoaRepository repository;
-    private final PessoaMapper mapper;
+    private final PasseRepository repository;
+    private final PasseMapper mapper;
 
-    public PessoaDTO salvar(PessoaDTO dto) {
+    public PasseDTO salvar(PasseDTO dto) {
         return mapper.toDto(repository.save(mapper.toEntity(dto)));
     }
 
-    public PessoaDTO obterPorId(Long id) {
+    public PasseDTO obterPorId(Long id) {
         return mapper.toDto(repository.findById(id).orElseThrow(RuntimeException::new));
     }
 
-    public List<PessoaDTO> obterTodos() {
+    public List<PasseDTO> obterTodos() {
         return mapper.toDto(repository.findAll());
     }
 
