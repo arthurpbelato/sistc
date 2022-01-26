@@ -2,14 +2,12 @@ package br.com.arthurpbelato.sistc.service.service;
 
 import br.com.arthurpbelato.sistc.service.repository.PessoaRepository;
 import br.com.arthurpbelato.sistc.service.service.dto.PessoaDTO;
-import br.com.arthurpbelato.sistc.service.service.exceptions.ResourceNotExistsException;
 import br.com.arthurpbelato.sistc.service.service.mapper.PessoaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor

@@ -7,6 +7,6 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
+      POSTGRES_USER: sistc
       POSTGRES_PASSWORD: 0000
       POSTGRES_DB: SISTC_DB

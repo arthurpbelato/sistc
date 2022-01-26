@@ -5,4 +5,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
 
+    <include file="liquibase/20220126134500-create-tb-pessoa-changelog.xml"/>
+    <include file="liquibase/20220126134600-create-tb-onibus-changelog.xml"/>
 </databaseChangeLog>

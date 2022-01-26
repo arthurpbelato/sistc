@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-
 import java.time.LocalDate;
 
 @Getter
@@ -46,4 +44,8 @@ public class Pessoa {
 
     @Column(name = "EMAIL", length = 200)
     private String email;
+
+    @Column(name = "NOME_FOTO", length = 100)
+    private String nomeFoto;
+
 }

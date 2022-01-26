@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="1643215509692-1" author="arthur.belato">
+        <createTable tableName="tb_onibus">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_tb_onibus"/>
+            </column>
+            <column name="cidade" type="VARCHAR(50)"/>
+            <column name="estado" type="VARCHAR(2)"/>
+            <column name="nome_linha" type="VARCHAR(100)"/>
+            <column name="inicio_circulacao" type="TIME"/>
+            <column name="fim_circulacao" type="TIME"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1643215523806-1" author="arthur.belato">
+        <createSequence sequenceName="SEQ_ONIBUS" startValue="1" incrementBy="1"/>
+    </changeSet>
+</databaseChangeLog>
