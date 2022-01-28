@@ -5,3 +5,7 @@ services:
     extends:
       service: sistc-postgresql
       file: container/postgresql.yml
+  sistc-minio:
+    extends:
+      service: sistc-minio
+      file: container/minio.yml
